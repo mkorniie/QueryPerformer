@@ -1,10 +1,26 @@
 import java.text.SimpleDateFormat;
-
-/**
- * Created by Maria on 08.08.18.
- */
+import java.util.ArrayList;
+import java.util.Objects;
 
 public final class Constants  {
+
+    public static Parameter
+    public static Parameter SERVICES = new Parameter();
+
+    public class Line {
+        Integer numberOfParameters;
+        ArrayList<Parameter> lineParameters;
+
+        public Line (Parameter ... parameters) {
+            if (parameters.length == 0)
+                throw new IllegalArgumentException("Line must have at least one parameter!");
+            this.numberOfParameters = parameters.length;
+            for (: parameters) {
+
+            }
+        }
+
+    }
 
     public static int MAX_NUMBER_OF_LINES = 100000;
     public static int NUMBER_OF_SERVICES = 10;
@@ -18,4 +34,13 @@ public final class Constants  {
     private Constants(){
         throw new AssertionError();
     }
+
+    private class Parameter {
+        private String  name;
+        private int     upperLimit;
+        private int     lowerLimit;
+        Parameter       subParameter;
+    }
+
+
 }

@@ -1,22 +1,35 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Task {
+    public class Environment {
+
+    }
+
+    public void setUpEnvironment(ArrayList<Line> lines) {
+
+    }
 
     public static void main(String[] args) {
+        setUpEnvironment();
+
+
         QueriesReader qReader = new QueriesReader();
-        ArrayList<String> lines = qReader.inputLines();
-//
-        QueriesPerformer qPerformer = new QueriesPerformer(lines);
-        qPerformer.performQueries();
 
-//        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat ("dd.MM.yyyy");
-//
-//        Date d = DATE_FORMAT.parse("15.10.2012");
-//        System.out.println(DATE_FORMAT.format(d));
-//        WaitingTimeLine n = QueriesPerformer.newWaitingTimeLine("1.1 8.15.1 P 15.10.2012 83");
-//        System.out.println(n);
+        /*
+        **       You can read input from command line using:
+        **
+        **       ArrayList<String> lines = qReader.readFromCommandLine();
+        */
 
-//        Integer i = Integer.parseInt("1");
-//        System.out.println(i);
+        ArrayList<String> lines = null;
+        try {
+            lines = qReader.readFromFile("../input");
+        } catch (IOException e) {
+            System.out.println("Error reading file");
+        }
+
+        QuickQueriesPerformer qPerformer = new QuickQueriesPerformer();
+        qPerformer.performQueries(lines);
     }
 }
