@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="QueryPerformer:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/QueryPerformer_jar</output-path>
-    <root id="archive" name="QueryPerformer.jar">
-      <element id="module-output" name="QueryPerformer" />
-    </root>
-  </artifact>
-</component>

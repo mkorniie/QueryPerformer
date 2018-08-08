@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0f5a359-bd25-499d-8310-13869a2e70e3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/Constants.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer$1.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer$QueryLine.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer$QueryLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer$WaitingTimeLine.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer$WaitingTimeLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesPerformer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesReader.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/QueriesReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/Task.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/QueryPerformer/Validator.class" afterPath="$PROJECT_DIR$/out/production/QueryPerformer/Validator.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/QueryPerformer_jar.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QueryPerformer.iml" afterPath="$PROJECT_DIR$/QueryPerformer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Constants.java" afterPath="$PROJECT_DIR$/src/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QueriesPerformer.java" afterPath="$PROJECT_DIR$/src/QueriesPerformer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QueriesReader.java" afterPath="$PROJECT_DIR$/src/QueriesReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task.java" afterPath="$PROJECT_DIR$/src/Task.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Validator.java" afterPath="$PROJECT_DIR$/src/Validator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,16 +39,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryPerformer_jar.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/artifacts/QueryPerformer_jar.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -208,6 +185,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueryPerformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="QueryPerformer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -521,7 +512,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="95" y="23" width="1229" height="826" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
