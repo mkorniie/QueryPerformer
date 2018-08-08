@@ -2,17 +2,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Task {
-    public class Environment {
-
-    }
-
-    public void setUpEnvironment(ArrayList<Line> lines) {
-
-    }
 
     public static void main(String[] args) {
-        setUpEnvironment();
-
 
         QueriesReader qReader = new QueriesReader();
 

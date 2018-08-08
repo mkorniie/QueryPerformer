@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class QuickQueriesPerformer {
 
-    private class QuickWaitingTimeLine {
+    private class WaitingTimeLine {
         private String  serviceLine;
         private String  questionLine;
         private String  responseType;
         private Date    responseDate;
         private Integer waitingTime;
 
-        private QuickWaitingTimeLine (String line) {
+        private WaitingTimeLine(String line) {
             String [] split = line.split(" ");
             if (split.length == 5) {
                 this.serviceLine = Validator.addServiceIfValid(split[0]);
                 this.questionLine = Validator.addQuestionIfValid(split[1]);
-                this.responseType = split[2];
+                this.responseType = Validator.addResponseTypeIfValid(split[2]);
                 try {
                     this.responseDate = Constants.DATE_FORMAT.parse(split[3]);
                 } catch (ParseException e) {
@@ -30,7 +30,7 @@ public class QuickQueriesPerformer {
 
     }
 
-    private class QuickQueryLine {
+    private class QueryLine {
         private String  serviceLine;
         private String  questionLine;
         private String  responseType;
@@ -52,12 +52,12 @@ public class QuickQueriesPerformer {
                 throw new IllegalArgumentException("Invalid date line: " + dates);
         }
 
-        private QuickQueryLine (String line) {
+        private QueryLine(String line) {
             String [] split = line.split(" ");
             if (split.length == 4) {
                 this.serviceLine = split[0].equals("*") ? split[0] : Validator.addServiceIfValid(split[0]);
                 this.questionLine = split[1].equals("*") ? split[1] :  Validator.addQuestionIfValid(split[1]);
-                this.responseType = split[2];
+                this.responseType = Validator.addResponseTypeIfValid(split[2]);
                 try {
                     parseDates(split[3]);
                 } catch (ParseException e) {
@@ -78,7 +78,7 @@ public class QuickQueriesPerformer {
         return false;
     }
 
-    public boolean matchLine(QuickWaitingTimeLine waitingTimeLine, QuickQueryLine query){
+    public boolean matchLine(WaitingTimeLine waitingTimeLine, QueryLine query){
         if (matchesParameter(waitingTimeLine.serviceLine, query.serviceLine)) {
             if (matchesParameter(waitingTimeLine.questionLine, query.questionLine)) {
                 if (waitingTimeLine.responseType.equals(query.responseType)) {
@@ -94,14 +94,14 @@ public class QuickQueriesPerformer {
         return false;
     }
 
-    public void quickQueryExecute(ArrayList<QuickWaitingTimeLine> timeLines, QuickQueryLine query){
+    public void quickQueryExecute(ArrayList<WaitingTimeLine> timeLines, QueryLine query){
         if (timeLines == null || timeLines.size() == 0) {
             System.out.println("-");
         }
         else {
             Long totalTime = (long)0;
             Integer numberOfMatchingQueries = 0;
-            for (QuickWaitingTimeLine waitingTimeLine: timeLines) {
+            for (WaitingTimeLine waitingTimeLine: timeLines) {
                 if (matchLine(waitingTimeLine, query))
                 {
                     totalTime += waitingTimeLine.waitingTime;
@@ -113,15 +113,15 @@ public class QuickQueriesPerformer {
     }
 
     public void performQueries(ArrayList<String> allInputLines){
-        ArrayList<QuickWaitingTimeLine> quickTimeLines = new ArrayList<>();
+        ArrayList<WaitingTimeLine> quickTimeLines = new ArrayList<>();
 
         for (String inputLine: allInputLines) {
 
             if (inputLine.startsWith("C ")){
-                quickTimeLines.add(new QuickWaitingTimeLine(inputLine.substring(2)));
+                quickTimeLines.add(new WaitingTimeLine(inputLine.substring(2)));
             }
             else if (inputLine.startsWith("D ")){
-                QuickQueryLine newQQL = new QuickQueryLine(inputLine.substring(2));
+                QueryLine newQQL = new QueryLine(inputLine.substring(2));
                 quickQueryExecute(quickTimeLines, newQQL);
             }
             else
