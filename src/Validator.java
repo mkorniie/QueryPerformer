@@ -34,7 +34,7 @@ public class Validator {
             Integer questionID = Integer.parseInt(split[0]);
             if (questionID <= 0 || questionID > Constants.NUMBER_OF_QUESTION_TYPES)
                 throw new IllegalArgumentException("Question index must be between 1 and " + Constants.NUMBER_OF_QUESTION_TYPES);
-            if (split.length == 2 || split.length == 2)
+            if (split.length == 2 || split.length == 3)
             {
                 Integer questionCategoryID = Integer.parseInt(split[1]);
                 if (questionCategoryID <= 0 || questionCategoryID > Constants.NUMBER_OF_QUESTION_CATEGORIES)

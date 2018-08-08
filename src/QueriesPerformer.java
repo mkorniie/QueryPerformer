@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class QuickQueriesPerformer {
+public class QueriesPerformer {
 
     private class WaitingTimeLine {
         private String  serviceLine;
@@ -70,15 +70,11 @@ public class QuickQueriesPerformer {
 
     }
 
-    public boolean matchesParameter(String timeLine, String query) {
-        if (query.equals("*"))
-            return true;
-        if (timeLine.startsWith(query))
-            return true;
-        return false;
+    private boolean matchesParameter(String timeLine, String query) {
+        return (query.equals("*") || timeLine.startsWith(query));
     }
 
-    public boolean matchLine(WaitingTimeLine waitingTimeLine, QueryLine query){
+    private boolean matchLine(WaitingTimeLine waitingTimeLine, QueryLine query){
         if (matchesParameter(waitingTimeLine.serviceLine, query.serviceLine)) {
             if (matchesParameter(waitingTimeLine.questionLine, query.questionLine)) {
                 if (waitingTimeLine.responseType.equals(query.responseType)) {
@@ -94,7 +90,7 @@ public class QuickQueriesPerformer {
         return false;
     }
 
-    public void quickQueryExecute(ArrayList<WaitingTimeLine> timeLines, QueryLine query){
+    private void queryExecute(ArrayList<WaitingTimeLine> timeLines, QueryLine query){
         if (timeLines == null || timeLines.size() == 0) {
             System.out.println("-");
         }
@@ -113,16 +109,16 @@ public class QuickQueriesPerformer {
     }
 
     public void performQueries(ArrayList<String> allInputLines){
-        ArrayList<WaitingTimeLine> quickTimeLines = new ArrayList<>();
+        ArrayList<WaitingTimeLine> timeLines = new ArrayList<>();
 
         for (String inputLine: allInputLines) {
 
             if (inputLine.startsWith("C ")){
-                quickTimeLines.add(new WaitingTimeLine(inputLine.substring(2)));
+                timeLines.add(new WaitingTimeLine(inputLine.substring(2)));
             }
             else if (inputLine.startsWith("D ")){
-                QueryLine newQQL = new QueryLine(inputLine.substring(2));
-                quickQueryExecute(quickTimeLines, newQQL);
+                QueryLine newQL = new QueryLine(inputLine.substring(2));
+                queryExecute(timeLines, newQL);
             }
             else
                 throw new IllegalArgumentException("The input line has wrong format: " + inputLine);

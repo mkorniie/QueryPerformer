@@ -20,7 +20,7 @@ public class Task {
             System.out.println("Error reading file");
         }
 
-        QuickQueriesPerformer qPerformer = new QuickQueriesPerformer();
+        QueriesPerformer qPerformer = new QueriesPerformer();
         qPerformer.performQueries(lines);
     }
 }
