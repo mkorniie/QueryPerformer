@@ -15,7 +15,7 @@ public class Task {
 
         ArrayList<String> lines = null;
         try {
-            lines = qReader.readFromFile("../input");
+            lines = qReader.readFromFile("input");
         } catch (IOException e) {
             System.out.println("Error reading file");
         }
